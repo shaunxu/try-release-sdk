@@ -1,5 +1,5 @@
 {
-  "name": "try-release-sdk",
+  "name": "@shaunxu/try-release-sdk",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,5 +17,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "workspaces": [
+    "packages/app1",
+    "packages/app2"
+  ]
 }
