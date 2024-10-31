@@ -6,7 +6,7 @@
   "scripts": {
     "conventional-recommended-bump": "conventional-recommended-bump -p angular",
     "conventional-changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "preversion": "git branch -b \"releases/%s\"",
+    "preversion": "git checkout -b \"releases/%s\"",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add ."
   },
   "devDependencies": {
