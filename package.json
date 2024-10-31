@@ -1,0 +1,20 @@
+{
+  "name": "try-release-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "conventional-recommended-bump": "conventional-recommended-bump -p angular",
+    "conventional-changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add ."
+  },
+  "devDependencies": {
+    "conventional-changelog": "^6.0.0",
+    "conventional-changelog-angular": "^8.0.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-recommended-bump": "^10.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
