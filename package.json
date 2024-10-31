@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "conventional-recommended-bump": "conventional-recommended-bump -p angular",
-    "conventional-changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "conventional-changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "devDependencies": {
     "conventional-changelog": "^6.0.0",
