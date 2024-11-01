@@ -4,7 +4,8 @@ on:
   pull_request: 
     branches:
       - main
-    types: [closed]
+    types: 
+      - closed
 jobs:
   release-please:
     runs-on: ubuntu-latest
@@ -14,6 +15,9 @@ jobs:
       - run: |
           echo "PR Merged"
         if: github.event.pull_request.merged
+      - run: |
+          echo "Relase PR Merged"
+        if: ${{ startsWith(github.event.pull_request.head.ref, 'releases/') }}
       - env:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
