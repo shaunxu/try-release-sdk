@@ -9,6 +9,11 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo "PR Closed"
+      - run: |
+          echo "PR Merged"
+        if: github.event.pull_request.merged
       - env:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
