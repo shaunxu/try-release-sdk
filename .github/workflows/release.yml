@@ -8,7 +8,7 @@ on:
       - closed
 jobs:
   release:
-    if: github.event.pull_request.merged && ${{ startsWith(github.event.pull_request.head.ref, 'releases/') }}
+    if: ${{ github.event.pull_request.merged && startsWith(github.event.pull_request.head.ref, 'releases/') }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
