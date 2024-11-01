@@ -7,18 +7,20 @@ on:
     types: 
       - closed
 jobs:
-  release-please:
+  release:
+    if: github.event.pull_request.merged && ${{ startsWith(github.event.pull_request.head.ref, 'releases/') }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - run: |
-          echo "PR Closed"
+          echo "Releasing"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@shaunxu'
       - run: |
-          echo "PR Merged"
-        if: github.event.pull_request.merged
-      - run: |
-          echo "Relase PR Merged"
-        if: ${{ startsWith(github.event.pull_request.head.ref, 'releases/') }}
-      - env:
-          EVENT_CONTEXT: ${{ toJSON(github.event) }}
-        run: |
-          echo $EVENT_CONTEXT
+           node app.js
